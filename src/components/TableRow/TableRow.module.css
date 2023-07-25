@@ -1,0 +1,7 @@
+.row{
+    display: flex;
+    height: 4%;
+}
+.firstRow{
+    background: #F5853F;
+}

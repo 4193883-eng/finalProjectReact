@@ -1,6 +1,44 @@
 {
-  "tables": [{
-    "name": ""
-  }],
-  "users": []
+  "tables": [
+    {
+      "id": 1,
+      "title": "Table 1",
+      "description": "Lorem"
+    },
+    {
+      "id": 2,
+      "title": "Table 2",
+      "description": "Lorem"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "title": "Buy lemons",
+      "description": "Lorem",
+      "date": "11@MON",
+      "tableId": 1
+    },
+    {
+      "id": 2,
+      "title": "Buy oranges",
+      "description": "Lorem",
+      "date": "12@MON",
+      "tableId": 1
+    },
+    {
+      "id": 3,
+      "title": "Buy salt",
+      "description": "Lorem",
+      "date": "14@TUE",
+      "tID": 2
+    },
+    {
+      "id": 4,
+      "title": "Make project",
+      "description": "",
+      "date": "21@FRI",
+      "tID": 1
+    }
+  ]
 }

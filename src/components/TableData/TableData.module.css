@@ -1,0 +1,8 @@
+.a {
+    width: 12.5%;
+    padding-left: 5px;
+    border: 1px solid black;
+    border-top: none;
+    border-collapse: collapse;
+    border-right: none;
+}
