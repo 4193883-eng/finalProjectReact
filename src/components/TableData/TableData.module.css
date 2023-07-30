@@ -4,5 +4,27 @@
     border: 1px solid black;
     border-top: none;
     border-collapse: collapse;
-    border-right: none;
+    border-left: none;
+    position: relative;
+    text-wrap: normal;
+    vertical-align: center;
+    z-index: 0;
+}
+
+.deleteBtn{
+    display: none;
+    z-index: 1;
+}
+
+.a:focus{
+    outline: none;
+}
+
+.a:hover .deleteBtn {
+    display: block;
+}
+
+.block{
+    all: unset;
+    display: block;
 }

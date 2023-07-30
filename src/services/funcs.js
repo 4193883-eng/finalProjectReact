@@ -1,4 +1,5 @@
 import {days, newTable} from "./consts.js";
+import axios from "axios";
 
 
 export function add0IfNeeded(number) {
@@ -21,14 +22,31 @@ function dayToNumber(dayUnverif){
 }
 
 export function parseData(events){
-    let table = newTable;
+    let table = duplicate(newTable);
 
     events.forEach((event) => {
         const eventMoment = String(event.date).split("@");
         const eventHour = Number(eventMoment[0]);
         const eventDay = String(Number(dayToNumber(String(eventMoment[1]))));
-        table[eventHour][eventDay] = String(event.title);
+        // table[eventHour][eventDay] = String(event.title);
+        table[eventHour][eventDay] = {id: event.id, title: event.title};
     })
 
     return table;
+}
+
+export function duplicate(target){
+    return JSON.parse(JSON.stringify(target));
+}
+
+export function fetchData(url, tableId){
+    return axios.get(url+String(tableId)+"?_embed=events")
+}
+
+export function fetchTables(url){
+    return axios.get(url)
+}
+
+export function changeData(id, text){
+    return axios
 }

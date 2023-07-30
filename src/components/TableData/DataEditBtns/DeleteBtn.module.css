@@ -1,0 +1,17 @@
+.button {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 20px;
+    aspect-ratio: 1/1;
+    transition: all 1s;
+    padding: 0;
+}
+
+img {
+    display: block;
+    height: 20px;
+
+}
