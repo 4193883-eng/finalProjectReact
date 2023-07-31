@@ -4,12 +4,16 @@ import { EditData } from "./EditData.jsx";
 
 export function TableData({ el }) {
     const [isEditing, setEditing] = useState(false);
-    const [text, setText] = useState(el !== null ? el.title : "");
+    const [text, setText] = useState(el? el["title"] : "");
 
     function onDelete() {
         setEditing(true);
         setText("");
     }
+
+    // if(Math.random() >= 0.9){
+    //     setEditing(true)
+    // }
 
     return (
         <>

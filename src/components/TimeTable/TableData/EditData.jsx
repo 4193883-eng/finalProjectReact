@@ -1,7 +1,8 @@
 import styles from "./TableData.module.css";
 import { useRef } from "react";
+import { clsx } from "clsx";
 
-export function EditData({ text, setText, setEditing, isEditing }) {
+export function EditData({ text, setText, setEditing }) {
     const input = useRef(undefined);
     function onBlur(e) {
         setText(e.target.value);
@@ -9,12 +10,12 @@ export function EditData({ text, setText, setEditing, isEditing }) {
     }
 
     function blurOnEnter(e) {
-        if (e.target.key === "Enter") {
-            input.current.blur()
-        }
+        e.preventDefault()
+        input.current.blur()
     }
 
     return (
+        <form className={styles.form} onSubmit={blurOnEnter}>
         <input
             type={"text"}
             autoFocus={true}
@@ -23,9 +24,9 @@ export function EditData({ text, setText, setEditing, isEditing }) {
             onChange={(e) => {
                 setText(e.target.value);
             }}
-            className={styles.a}
+            className={clsx(styles.a, styles.input)}
             ref={input}
-            onKeyDown={blurOnEnter}
         ></input>
+        </form>
     );
 }

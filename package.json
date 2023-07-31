@@ -10,12 +10,10 @@
     "db": "json-server -w db.json"
   },
   "dependencies": {
-    "@react-buddy/ide-toolbox": "^2.4.0",
     "axios": "^1.4.0",
     "clsx": "^2.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-tabs": "^6.0.2"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

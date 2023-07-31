@@ -6,9 +6,11 @@
     border-collapse: collapse;
     border-left: none;
     position: relative;
-    text-wrap: normal;
-    vertical-align: center;
+    text-wrap: wrap;
+    vertical-align: middle;
     z-index: 0;
+    display: block;
+    height: 100%;
 }
 
 .deleteBtn{
@@ -27,4 +29,14 @@
 .block{
     all: unset;
     display: block;
+}
+
+.input{
+    width: 100%;
+}
+
+.form {
+    display: block;
+    width: 12.5%;
+    height: 100%;
 }

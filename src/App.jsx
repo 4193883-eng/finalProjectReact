@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { TimeTable } from "./components/TimeTable/TimeTable.jsx";
-import axios from "axios";
 import { Container } from "./components/Container/Container.jsx";
 import { baseUrl, newTable } from "./services/consts.js";
 import { Header } from "./components/Header/Header.jsx";
