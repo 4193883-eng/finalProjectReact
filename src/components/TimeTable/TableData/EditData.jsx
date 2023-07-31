@@ -1,9 +1,8 @@
 import styles from "./TableData.module.css";
-import { DeleteBtn } from "./DataEditBtns/DeleteBtn.jsx";
 import { useRef } from "react";
 
 export function EditData({ text, setText, setEditing, isEditing }) {
-    const input = useRef();
+    const input = useRef(undefined);
     function onBlur(e) {
         setText(e.target.value);
         setEditing(false);
@@ -11,7 +10,7 @@ export function EditData({ text, setText, setEditing, isEditing }) {
 
     function blurOnEnter(e) {
         if (e.target.key === "Enter") {
-            console.log(input);
+            input.current.blur()
         }
     }
 
@@ -26,6 +25,7 @@ export function EditData({ text, setText, setEditing, isEditing }) {
             }}
             className={styles.a}
             ref={input}
+            onKeyDown={blurOnEnter}
         ></input>
     );
 }
