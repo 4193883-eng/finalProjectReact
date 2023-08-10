@@ -3,5 +3,9 @@
     height: 4%;
 }
 .firstRow{
-    background: #F5853F;
+    background: #BDC696;
+}
+
+.firstRow div{
+    border-left: none;
 }

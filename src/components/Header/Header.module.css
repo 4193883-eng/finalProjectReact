@@ -1,9 +1,10 @@
 .head{
     display: flex;
     padding-inline: 10px;
-    background: cornflowerblue;
+    background: #775253;
     justify-content: space-between;
     align-items: center;
+    color:#D1D3C4;
 }
 
 .h1{

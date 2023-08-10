@@ -7,13 +7,15 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "db": "json-server -w db.json"
+    "db": "json-server -w db.json --delay=150"
   },
   "dependencies": {
     "axios": "^1.4.0",
     "clsx": "^2.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-loader-spinner": "^5.3.4",
+    "react-modern-drawer": "^1.2.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

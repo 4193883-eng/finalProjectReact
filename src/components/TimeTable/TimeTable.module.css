@@ -2,3 +2,11 @@
     box-sizing: border-box;
 }
 
+.b{
+    background: #BDC696;
+    color: #351431;
+}
+
+.c{
+    border-left: 1px solid black !important;
+}

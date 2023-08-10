@@ -1,7 +1,8 @@
 import styles from './TableTimeData.module.css'
+import { clsx } from "clsx";
 
-export function TableTimeData({children}) {
+export function TableTimeData({children, className}) {
 	return (
-		<div className={styles.a}>{children}</div>
+		<div className={clsx(styles.a, className)}>{children}</div>
 	)
 }

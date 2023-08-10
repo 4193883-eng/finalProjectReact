@@ -1,2 +1,44 @@
-.tableName{}
-.tableNameSelected{}
+.selector{
+    background: #C7CDAD;
+    display: flex;
+}
+.tableName{
+    all:unset;
+    border-radius: 25px;
+    border: none;
+    margin: 5px;
+    background: rgba(0, 0, 0, 0.07);
+    padding: 4px;
+    padding-inline: 7px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+}
+.tableName:hover{
+
+}
+.tableNameSelected{
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.tableName:hover .dltBtn{
+    display: block;
+}
+
+.dltBtn{
+    display: none;
+    position: static;
+    height: 19px;
+    overflow: hidden;
+}
+.input{
+    background: none;
+    color: black;
+    display: block;
+    width: 100%;
+    border: none;
+}
+.form{
+    display: block;
+    width: 100%;
+}

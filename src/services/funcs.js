@@ -1,6 +1,7 @@
-import {days, newTable} from "./consts.js";
+import { baseUrl, days, newTable } from "./consts.js";
 import axios from "axios";
 
+axios.defaults.baseURL = baseUrl
 
 export function add0IfNeeded(number) {
     if (String(number).length === 1) {
@@ -21,7 +22,7 @@ function dayToNumber(dayUnverif){
     return result;
 }
 
-export function parseData(events){
+export function parseData(events = []){
     let table = duplicate(newTable);
 
     events.forEach((event) => {
@@ -29,7 +30,7 @@ export function parseData(events){
         const eventHour = Number(eventMoment[0]);
         const eventDay = String(Number(dayToNumber(String(eventMoment[1]))));
         // table[eventHour][eventDay] = String(event.title);
-        table[eventHour][eventDay] = {id: event.id, title: event.title};
+        table[eventHour][eventDay] = {id: event.id, title: event.title, date: eventMoment};
     })
 
     return table;
@@ -39,14 +40,46 @@ export function duplicate(target){
     return JSON.parse(JSON.stringify(target));
 }
 
-export function fetchData(url, tableId){
-    return axios.get(url+String(tableId)+"?_embed=events")
+export function fetchData(tableId){
+    return axios.get(`/tables/${tableId}`, {
+        params:{
+            "_embed": "events"
+        }
+    })
 }
 
-export function fetchTables(url){
-    return axios.get(url)
+export function fetchTables(){
+    return axios.get("/tables")
 }
 
-export function changeData(id, text){
-    return axios
+export function deleteEvent(id){
+    return axios.delete(`/events/${id}`)
+}
+
+export function changeData(text, id){
+    return axios.patch(`/events/${id}`, {
+        "title": text
+    })
+}
+
+export function createData(text, date, tableId){
+    return axios.post(`/events/`, {
+        "title": text,
+        "date": date,
+        "tableId": tableId
+    })
+}
+
+export function createTable(value){
+    return axios.post(`/tables/`, {
+        title: value
+    })
+}
+
+export function deleteTable(id){
+    return axios.delete(`/tables/${id}`)
+}
+
+export function getUrlFromLocalStorage(){
+
 }
